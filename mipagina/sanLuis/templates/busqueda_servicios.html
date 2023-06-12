@@ -10,11 +10,11 @@
 
 <body>
     
-    <form action="/buscar/" method="GET">
+    <form action="{% url 'buscar' %}" method="GET">
     
-    <input type="text" name="serv">
-    <input type="submit" value="Buscar">
-    </form>
+        <input type="text" name="nombre">
+        <input type="submit" value="Buscar">
+        </form>
 </body>
 
 

@@ -10,10 +10,10 @@ def busqueda_servicios(request):
 
 def buscar(request):
 
-    if request.GET["email"]:
+    if request.GET["nombre"]:
 
         #mensaje="Servicio buscado: %r" %request.GET["serv"]
-        servicio=request.GET["email"]
+        servicio=request.GET["nombre"]
 
         servicios = Pago.objects.filter(nombre__icontains=servicio)
 
@@ -30,3 +30,7 @@ def contacto(request):
         return render(request, "gracias.html")
 
     return render(request, "contacto.html")
+
+
+
+
