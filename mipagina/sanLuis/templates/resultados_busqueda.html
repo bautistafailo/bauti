@@ -1,0 +1,19 @@
+<html>
+<body>
+    <p>Usted está buscando: <strong>{{query}}</strong></p>
+
+    {% if servicios %}
+        <p>Servicio localizado: {{servicios|length}} servicios</p>
+
+        <ul>
+            {% for s in servicios %}
+                <li>
+                    {{ s.nombre }} &nbsp;{{s.seccion}} &nbsp;{{s.precio}}
+                </li>
+            {% endfor %}
+        </ul>
+    {% else %}    
+        <p>Servicio no encontrado</p>
+    {% endif %}
+</body>
+</html>
