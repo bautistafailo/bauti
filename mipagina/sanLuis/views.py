@@ -1,6 +1,9 @@
 from django.shortcuts import render
 from django.http import HttpResponse
 from sanLuis.models import Pago
+from django.shortcuts import render, redirect
+from .models import Clientes
+from .models import Pedidos
 
 
 
@@ -12,6 +15,9 @@ def busqueda_servicios(request):
 
     return render(request, "sanLuis/busqueda_servicios.html")
 
+from django.shortcuts import render
+from .models import Pago
+
 def buscar(request):
     servicio = request.GET.get("nombre")
 
@@ -19,14 +25,14 @@ def buscar(request):
         servicios = Pago.objects.filter(nombre__icontains=servicio)
         return render(request, "sanLuis/resultados_busqueda.html", {"servicios": servicios, "query": servicio})
 
-    mensaje = "Gracias por ayudarnos a mejorar!"
-    return HttpResponse(mensaje)
+    return render(request, "sanLuis/agradecimiento.html")
+
 
     
 
 def contacto(request):
     if request.method=="POST":
-        return render(request, "sanLuis/gracias.html")
+        return render(request, "sanLuis/agradecimiento.html")
 
     return render(request, "sanLuis/contacto.html")
 
@@ -35,14 +41,6 @@ def index(request):
 
 def modalidades(request):
     return render(request, "sanLuis/modalidades.html")
-
-from django.shortcuts import render, redirect
-from .models import Clientes
-from django import forms
-
-
-from django.shortcuts import render, redirect
-from .models import Clientes
 
 
 def crear_cliente(request):
@@ -55,6 +53,23 @@ def crear_cliente(request):
         return redirect('inicio')
     else:
         return render(request, 'sanLuis/formulario.html')
+    
+
+
+
+def crear_pedido(request):
+    if request.method == 'POST':
+        numero = request.POST.get('numero')
+        fecha = request.POST.get('fecha')
+        pagado = request.POST.get('pagado')
+
+        pedido = Pedidos(numero=numero, fecha=fecha, pagado=pagado)
+        pedido.save()
+
+        return redirect('inicio')  
+    else:
+        return render(request, 'sanluis/pedido.html')
+
 
 
 

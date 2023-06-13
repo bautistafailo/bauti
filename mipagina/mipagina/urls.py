@@ -16,8 +16,8 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
-from mipagina.views import saludo, despedida, lahora, calculaedad,nosotros, modalidades
 from sanLuis import views
+
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('modalidades/', views.modalidades, name='modalidades'),
@@ -26,5 +26,6 @@ urlpatterns = [
     path('contacto/', views.contacto, name='contacto'),
     path('', views.index, name='inicio'),
     path('formulario/', views.crear_cliente, name='crearcliente'),
-    
+    path('crear_pedido/', views.crear_pedido, name='crear_pedido'),
 ]
+
