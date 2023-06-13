@@ -20,14 +20,11 @@ from mipagina.views import saludo, despedida, lahora, calculaedad,nosotros, moda
 from sanLuis import views
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('saludo/', saludo),
-    path('despedida/', despedida),
-    path('hora/', lahora),
-    path('edades/<int:agno>/', calculaedad),
-    path('nosotros/',nosotros),
-    path('modalidades/', views.modalidades),
-    path('busqueda_servicios/', views.busqueda_servicios),
+    path('modalidades/', views.modalidades, name='modalidades'),
+    path('busqueda_servicios/', views.busqueda_servicios, name='servicios'),
     path('buscar/', views.buscar, name="buscar"),
-    path('contacto/', views.contacto),
-    path('', views.index)
+    path('contacto/', views.contacto, name='contacto'),
+    path('', views.index, name='inicio'),
+    path('formulario/', views.crear_cliente, name='crearcliente'),
+    
 ]
