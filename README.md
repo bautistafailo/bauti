@@ -18,5 +18,4 @@ Contribuciones
 Las contribuciones son bienvenidas. Si encuentras algún problema o quieres agregar nuevas características, no dudes en abrir un issue o enviar un pull request.
 
 
-Este README proporciona una visión general básica de tu proyecto y brinda información sobre las principales funcionalidades de la aplicación.
-Recuerda personalizarlo según las necesidades y características específicas de tu proyecto.
+
