@@ -8,15 +8,21 @@ Django 3.x
 Base de datos
 Este proyecto utiliza una base de datos SQLite por defecto.
 
-Funcionalidades
+Funcionalidades:
+
 Modalidades: Muestra las diferentes modalidades de servicios disponibles.
-Búsqueda de servicios: Permite buscar servicios por nombre.
-Contacto: Proporciona un formulario para ponerse en contacto.
-Crear cliente: Permite registrar nuevos clientes.
-Crear pedido: Permite realizar pedidos.
+Servicios: Permite buscar servicios por nombre.
+Contacto: Proporciona un formulario para ponerse en contacto. (El msimo es una simulacion, ya que agregar el codigo que hacia que los mismos comentarios lleguen a mi mail escapaba de mis conocimietos).
+Inscribirme: Permite registrar nuevos clientes.
+Pago: Permite dejar constancia de un pago.
+Nosotros: Brinda informacion especifica acerca de: La web, la institucion y mi persona. (ademas pone en practica el uso de un boton que nos permita saber mas sobre algo en especifico, en este caso, saber mas sobre la institucion).
+Editar Perfil: Permite cambiar contraseña, nombre de usuario y avatar.
+Log In y Log out:  Permite a los usuarios iniciar sesión y cerrar sesión en la aplicación.
+
+
+
 Contribuciones
-Las contribuciones son bienvenidas. Si encuentras algún problema o quieres agregar nuevas características, no dudes en abrir un issue o enviar un pull request.
+Las contribuciones son bienvenidas. Si encuentras algún problema o quieres agregar nuevas características, no lo dudes.
 
 
-Este README proporciona una visión general básica de tu proyecto y brinda información sobre las principales funcionalidades de la aplicación.
-Recuerda personalizarlo según las necesidades y características específicas de tu proyecto.
+Nombre: Juan Bautista Failo
