@@ -25,7 +25,7 @@ def buscar(request):
         servicios = Pago.objects.filter(nombre__icontains=servicio)
         return render(request, "sanLuis/resultados_busqueda.html", {"servicios": servicios, "query": servicio})
 
-    return render(request, "sanLuis/agradecimiento.html")
+    return render(request, "sanLuis/index.html")
 
 
     
