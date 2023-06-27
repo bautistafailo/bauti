@@ -13,7 +13,7 @@ from .models import Pedidos
 
 def busqueda_servicios(request):
 
-    return render(request, "sanLuis/busqueda_servicios.html")
+    return render(request, "sanLuis/index.html")
 
 from django.shortcuts import render
 from .models import Pago
