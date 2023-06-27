@@ -3,6 +3,7 @@ import datetime
 from django.template import Template, Context
 from django.template.loader import get_template
 from django.shortcuts import render
+from accounts.models import Accounts
 
 class Persona(object):
 
@@ -63,6 +64,11 @@ def calculaedad(request, agno):
     return HttpResponse(documento)
 
 
-
+def inicio(request):
+    try:
+        url = Accounts.objects.filter(id=request.user.id)[0]
+    except IndexError: 
+        url = None   
+    return render(request, "sanLuis/index.html", {"url": url})
 
 

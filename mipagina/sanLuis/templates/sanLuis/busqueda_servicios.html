@@ -27,7 +27,7 @@
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
                 <div class="collapse navbar-collapse" id="navbarResponsive">
                     <ul class="navbar-nav ms-auto">
-                        <li class="nav-item"><a class="nav-link" href="{% url 'inicio' %}">inicio</a></li>
+                        <li class="nav-item"><a class="nav-link" href="{% url 'index' %}">inicio</a></li>
                     </ul>
                 </div>
             </div>
@@ -39,7 +39,22 @@
                 <div class="container px-5">
                     <h1 class="masthead-heading mb-0">Que seccion buscas</h1>
                     <h2 class="masthead-subheading mb-0">Escoge tu seccion, ej:Quinto.</h2>
-                    
+                    <!DOCTYPE html>
+                    <html>
+                    <head>
+                        <title>Busqueda de servicios</title>
+                    </head>
+                    <body>
+                        <div style="display: flex; justify-content: center; align-items: center; height: 10vh;">
+                            <div style="margin-right: 50px;">
+                                <form action="{% url 'buscar' %}" method="GET">
+                                    <input type="text" name="nombre">
+                                    <input type="submit" value="Buscar">
+                                </form>
+                            </div>
+                        </div>
+                    </body>
+                    </html>
                 </div>
             </div>
             <div class="bg-circle-1 bg-circle"></div>
@@ -51,34 +66,8 @@
                     {% block body %}
                     
                     {% endblock body %}
-
-                    </html>
-
-
-                    <html>
-                    
-                    <head>
                     
                     
-                    <title>  Busqueda de servicios    </title>
-                    
-                    
-                    </head>
-                    
-                    <body>
-                        
-                        <form action="{% url 'buscar' %}" method="GET">
-                        
-                            <input type="text" name="nombre">
-                            <input type="submit" value="Buscar">
-                            </form>
-                    </body>
-                    
-                    
-                    
-                    </html>
-
-
 
         <!-- Footer-->
         <footer class="py-5 bg-black">

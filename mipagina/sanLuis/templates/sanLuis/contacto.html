@@ -26,7 +26,7 @@
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
                 <div class="collapse navbar-collapse" id="navbarResponsive">
                     <ul class="navbar-nav ms-auto">
-                        <li class="nav-item"><a class="nav-link" href="{% url 'inicio' %}">inicio</a></li>
+                        <li class="nav-item"><a class="nav-link" href="{% url 'index' %}">inicio</a></li>
                         
                     </ul>
                 </div>
@@ -62,30 +62,55 @@
                     </title>
                     
                     
-                    </head>
+
+                    <!DOCTYPE html>
+<html>
+<head>
+    <title>Contactanos</title>
+    <style>
+        .container {
+            width: 50%;
+            margin: 0 auto;
+            padding-top: 50px;
+        }
+        input[type="text"], textarea {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 10px;
+        }
+        input[type="submit"] {
+            background-color: rgb(255, 0, 140);
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 20px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Contactanos</h1>
+        <form action="/buscar/" method="POST">
+            {% csrf_token %}
+            
+            <p>Asunto:</p>
+            <input type="text" name="asunto">
+    
+            <p>Email:</p>
+            <input type="text" name="email">
+    
+            <p>Mensaje:</p>
+            <textarea name="mensaje" cols="30" rows="10"></textarea>
+    
+            <input type="submit" value="Enviar">
+        </form>
+    </div>
+</body>
+</html>
+
                     
-                    <body>
-                        <h1>Contactanos</h1>
-                        <form action="/buscar/" method="POST">
-                            {% csrf_token %}
-                            
-                            <p>Asunto:</p>
-                            <input type="text" name="asunto">
-                    
-                            <p>Email:</p>
-                            <input type="text" name="email">
-                    
-                            <p>Mensaje:</p>
-                            <textarea name="mensaje" cols="30" rows="10"></textarea>
-                    
-                            <input type="submit" value="Enviar">
-                        </form>
-                    </body>
-                    
-                    
-                    
-                    
-                    </html>
+
 
 
         <!-- Footer-->

@@ -50,7 +50,7 @@ def crear_cliente(request):
         telefono = request.POST['telefono']
         cliente = Clientes(nombre=nombre, email=email, telefono=telefono)
         cliente.save()
-        return redirect('inicio')
+        return redirect('index')
     else:
         return render(request, 'sanLuis/formulario.html')
     
@@ -66,9 +66,11 @@ def crear_pedido(request):
         pedido = Pedidos(numero=numero, fecha=fecha, pagado=pagado)
         pedido.save()
 
-        return redirect('inicio')  
+        return redirect('index')  
     else:
         return render(request, 'sanluis/pedido.html')
+
+
 
 
 

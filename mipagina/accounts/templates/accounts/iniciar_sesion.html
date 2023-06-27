@@ -1,4 +1,7 @@
 <!DOCTYPE html>
+
+
+<!DOCTYPE html>
 {% load static %}
 
 <html lang="en">
@@ -7,7 +10,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
         <meta name="description" content="" />
         <meta name="author" content="" />
-        <title> {% block titulo %}Inicio{% endblock titulo %} </title>
+        <title> {% block titulo %}Register{% endblock titulo %} </title>
         <link rel="icon" type="image/x-icon" href="assets/favicon.ico" />
         <!-- Font Awesome icons (free version)-->
         <script src="https://use.fontawesome.com/releases/v6.3.0/js/all.js" crossorigin="anonymous"></script>
@@ -21,45 +24,27 @@
         <!-- Navigation-->
         <nav class="navbar navbar-expand-lg navbar-dark navbar-custom fixed-top">
             <div class="container px-5">
-                <a class="navbar-brand" href="#page-top">Educando con compromiso</a>
+                <a class="navbar-brand" href="#page-top"></a>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
                 <div class="collapse navbar-collapse" id="navbarResponsive">
                     <ul class="navbar-nav ms-auto">
+                        <li class="nav-item"><a class="nav-link" href="{% url 'index' %}">inicio</a></li>
                         <li class="nav-item"><a class="nav-link" href="{% url 'servicios' %}">servicios</a></li>
                         <li class="nav-item"><a class="nav-link" href="{% url 'contacto' %}">contacto</a></li>
-                        <li class="nav-item"><a class="nav-link" href="{% url 'about' %}">nosotros</a></li>
-                        {% if request.user.is_authenticated %}
-                        {% if request.user.accounts.avatar %}
-                            <li class="nav-item">
-                                <img src="{{ request.user.accounts.avatar.url }}" alt="" style="width: 50px; height: 50px;">
-                            </li>
-                        {% endif %}
-                        <li class="nav-item"><a class="nav-link" href="">Hola, {{ request.user.username }} </a></li>
-                        <li class="nav-item"><a class="nav-link" href="{% url 'crearcliente' %}">Inscribirme</a></li>
-                        <li class="nav-item"><a class="nav-link" href="{% url 'crear_pedido' %}">pago</a></li>
-                        <li class="nav-item"><a class="nav-link" href="{% url 'logout' %}">Logout</a></li>
-                        <li class="nav-item"><a class="nav-link" href="{% url 'editar' %}">Editar perfil</a></li>
-                    {% else %}
-                        <li class="nav-item"><a class="nav-link" href="{% url 'login' %}">Iniciar sesion</a></li>
-                        <li class="nav-item"><a class="nav-link" href="{% url 'register' %}">crear cuenta</a></li>
-                    {% endif %}
-                    
-                    </ul>
-                    
-
+                        <li class="nav-item"><a class="nav-link" href="{% url 'register' %}">crearcuenta</a></li>
                     </ul>
                     </ul>
                 </div>
             </div>
         </nav>
-        {% block main %}
         <!-- Header-->
         <header class="masthead text-center text-white">
             <div class="masthead-content">
                 <div class="container px-5">
-                    <h1 class="masthead-heading mb-0">I.S.L.G</h1>
-                    <h2 class="masthead-subheading mb-0">Instituto de educacion primaria, secuandaria y terciaria</h2>
-                    <a class="btn btn-primary btn-xl rounded-pill mt-5" href="#scroll"></a>
+                    <h1 class="masthead-heading mb-0">Registrate!</h1>
+                    <h2 class="masthead-subheading mb-0">Comienza por crear tu ceunta para poder acceder a la informacion de manera completa.</h2>
+                    <a class="btn btn-primary btn-xl rounded-pill mt-5" href="#scroll">COMENZAR</a>
+                    
                 </div>
             </div>
             <div class="bg-circle-1 bg-circle"></div>
@@ -68,9 +53,22 @@
             <div class="bg-circle-4 bg-circle"></div>
         </header>
 
-                    {% block body %}
 
-                    {% endblock body %}
+
+
+<title> Login </title>
+
+
+<div class="d-flex justify-content-center align-items-center" style="min-height: 20vh;">
+    <form method="POST" class="m-2">
+        {% csrf_token %}
+        {{ formulario.as_p }}
+        <input type="submit" value="Iniciar sesión" class="btn btn-primary">
+    </form>
+</div>
+
+
+
 
 
 
@@ -85,5 +83,8 @@
         <!-- Core theme JS-->
         <script src="js/scripts.js"></script>
     </body>
+    <section id="scroll">
+        <!-- Contenido de la sección -->
+    </section>
+
 </html>
-{% endblock main %}
