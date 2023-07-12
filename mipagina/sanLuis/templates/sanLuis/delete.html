@@ -1,0 +1,20 @@
+{% extends 'sanLuis/base.html' %}
+
+{% block titulo %}Eliminar Modalidad{% endblock titulo %}
+
+{% block main %}
+    <div class="container mt-5">
+        <h1>Eliminar Modalidad</h1>
+        <p>¿Estás seguro de que deseas eliminar esta modalidad?</p>
+        
+        <h3>Detalles de la modalidad:</h3>
+        <p>Nombre: {{ object.Nombre }}</p>
+        <p>Modalidad: {{ object.Modalidad }}</p>
+        
+        <form method="post">
+            {% csrf_token %}
+            <button type="submit" class="btn btn-danger">Eliminar</button>
+            <a href="{% url 'modalidad_lista' %}" class="btn btn-secondary">Cancelar</a>
+        </form>
+    </div>
+{% endblock main %}

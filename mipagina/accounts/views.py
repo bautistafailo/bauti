@@ -5,21 +5,15 @@ from django.contrib.auth.forms import AuthenticationForm
 from django.contrib.auth.mixins import LoginRequiredMixin
 from django.contrib.auth.models import User
 from django.contrib.auth.views import PasswordChangeView, LogoutView
-
-from django.views.generic import DeleteView
-
-
 from django.shortcuts import render, redirect
 from django.urls import reverse_lazy
-
 from accounts import forms
 from accounts import models
+from django.contrib.auth import authenticate, login
+from django.contrib.auth.forms import AuthenticationForm
 
 
-
-
-# Create your views here.
-
+# Vista para registrar un nuevo usuario
 def register(request):
     if request.method == 'POST':
         form = forms.RegistroUsuarioForm(data=request.POST)
@@ -27,13 +21,12 @@ def register(request):
             form.save()
             return redirect('login')
         else:
-            return render(request, 'accounts/crear_account.html', {'formulario':form})
+            return render(request, 'accounts/crear_account.html', {'formulario': form})
     form = forms.RegistroUsuarioForm()
-    return render(request, 'accounts/crear_account.html', {'formulario':form})
+    return render(request, 'accounts/crear_account.html', {'formulario': form})
 
 
-
-
+# Vista para iniciar sesión
 def login_request(request):
     if request.method == 'POST':
         form = AuthenticationForm(request, data=request.POST)
@@ -48,16 +41,15 @@ def login_request(request):
                 return render(request, "accounts/iniciar_sesion.html", {"mensaje": "Datos incorrectos"})
     else:
         form = AuthenticationForm()
-    
     return render(request, 'accounts/iniciar_sesion.html', {'formulario': form})
 
 
-
+# Vista para editar el perfil de un usuario
 def editar_perfil(request):
     usuario = request.user
-    modelo_perfil, _ = models.Accounts.objects.get_or_create(user=usuario)
+    modelo_perfil, _ = models.Accounts3.objects.get_or_create(user=usuario)
     if request.method == 'POST':
-        form = forms.EditarUsuarioForm(request.POST, request.FILES) 
+        form = forms.EditarUsuarioForm(request.POST, request.FILES)
         if form.is_valid():
             data = form.cleaned_data
             if data.get('email'):
@@ -81,18 +73,15 @@ def editar_perfil(request):
     return render(request, "accounts/editar_perfil.html", {"form": form})
 
 
-
-
+# Vista para mostrar el perfil de un usuario
 def mostrar_perfil(request):
     return render(request, 'accounts/mostrar_account.html')
 
-def eliminar_perfil(request):
-    ...
 
-def cambiar_password(request):
-    ...
+# Vista basada en clase para el logout
 class Logout(LogoutView):
-    template_name= 'accounts/logout_account.html'
+    template_name = 'accounts/logout_account.html'
+
 
 
 

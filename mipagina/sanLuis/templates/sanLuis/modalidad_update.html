@@ -1,0 +1,17 @@
+{% extends 'sanLuis/base.html' %}
+
+{% block titulo %}Actualizar Modalidad{% endblock titulo %}
+
+{% block main %}
+    <div class="container mt-5">
+        <h1>Actualizar Modalidad</h1>
+        <form method="post">
+            {% csrf_token %}
+            {{ form.as_p }}
+            <button type="submit" class="btn btn-primary">Guardar cambios</button>
+            <a href="{% url 'modalidad_lista' %}" class="btn btn-secondary">Volver</a>
+        </form>
+        
+        
+    </div>
+{% endblock main %}

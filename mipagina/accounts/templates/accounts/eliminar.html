@@ -3,13 +3,13 @@
 
 {% load static %}
 
-<title> {% block titulo %}Eliminar perfil{% endblock titulo %} </title>
+<title>{% block titulo %}Eliminar perfil{% endblock titulo %}</title>
 
 {% block main %}
-        <form action="{url 'eliminar_perfil' object.id}" method="POST" class="m-2"></form>
-            {% csrf_token %}
-            <p>Desea eliminar el perfil?</p>
-            <input type="submit" value="Confirmar" class="btn btn-primary">
-        </form>  
-{% endblock main %}          
+    <form action="{% url 'eliminar_perfil' object.id %}" method="POST" class="m-2">
+        {% csrf_token %}
+        <p>Desea eliminar el perfil?</p>
+        <input type="submit" value="Confirmar" class="btn btn-primary">
+    </form>  
+{% endblock main %}  
 

@@ -1,0 +1,14 @@
+{% extends 'sanLuis/base.html' %}
+
+{% block titulo %}Detalles de la Modalidad{% endblock titulo %}
+
+{% block main %}
+    <div class="container mt-5">
+        <h1>Detalles de la Modalidad</h1>
+        <p>Nombre: {{ object.titulo }}</p>
+        <p>Modalidad: {{ object.subtitulo }}</p>
+        
+        <a href="{% url 'modalidad_lista' %}" class="btn btn-secondary">Volver</a>
+        <a href="{% url 'modalidad_update' object.pk %}" class="btn btn-secondary">Actualizar</a>
+    </div>
+{% endblock main %}
