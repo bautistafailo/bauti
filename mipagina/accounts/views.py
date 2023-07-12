@@ -44,10 +44,16 @@ def login_request(request):
     return render(request, 'accounts/iniciar_sesion.html', {'formulario': form})
 
 
-# Vista para editar el perfil de un usuario
+from django.contrib.auth.decorators import login_required
+from django.contrib.auth.views import LogoutView
+from django.shortcuts import render, redirect
+from . import forms, models
+
+@login_required
 def editar_perfil(request):
     usuario = request.user
     modelo_perfil, _ = models.Accounts3.objects.get_or_create(user=usuario)
+    
     if request.method == 'POST':
         form = forms.EditarUsuarioForm(request.POST, request.FILES)
         if form.is_valid():
@@ -62,25 +68,23 @@ def editar_perfil(request):
             modelo_perfil.save()
             usuario.save()
             return redirect('index')
-        else:
-            return render(request, "accounts/editar_perfil.html", {"form": form})
-    form = forms.EditarUsuarioForm(initial={
-        'email': usuario.email,
-        'first_name': usuario.first_name,
-        'last_name': usuario.last_name,
-        'avatar': modelo_perfil.avatar,
-    })
+    else:
+        form = forms.EditarUsuarioForm(initial={
+            'email': usuario.email,
+            'first_name': usuario.first_name,
+            'last_name': usuario.last_name,
+            'avatar': modelo_perfil.avatar,
+        })
+
     return render(request, "accounts/editar_perfil.html", {"form": form})
 
-
-# Vista para mostrar el perfil de un usuario
+@login_required
 def mostrar_perfil(request):
     return render(request, 'accounts/mostrar_account.html')
 
-
-# Vista basada en clase para el logout
 class Logout(LogoutView):
     template_name = 'accounts/logout_account.html'
+
 
 
 

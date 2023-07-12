@@ -14,7 +14,6 @@ Including another URLconf
     1. Import the include() function: from django.urls import include, path
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
-
 from django.contrib import admin
 from django.urls import path, include
 from sanLuis import views
@@ -22,7 +21,6 @@ from django.conf.urls.static import static
 from django.conf import settings
 from django.contrib.auth.decorators import login_required
 from sanLuis.views import ModalidadList, ModalidadDetalle, ModalidadCreacion, ModalidadUpdate, ModalidadDelete
-from django.urls import reverse_lazy
 
 urlpatterns = [
     path('admin/', admin.site.urls),
@@ -36,15 +34,13 @@ urlpatterns = [
     path('modalidad/lista/', ModalidadList.as_view(), name='modalidad_lista'),
     path('modalidad/detail/<int:pk>/', ModalidadDetalle.as_view(), name='modalidad_detail'),
     path('modalidad/crear/', ModalidadCreacion.as_view(), name='modalidad_create'),
-    path('modalidad/update/<int:pk>/', ModalidadUpdate.as_view(), name='modalidad_update'),
-    path('modalidad/delete/<int:pk>/', ModalidadDelete.as_view(), name='modalidad_delete'),
+    path('modalidad/update/<int:pk>/', login_required(ModalidadUpdate.as_view()), name='modalidad_update'),
+    path('modalidad/delete/<int:pk>/', login_required(ModalidadDelete.as_view()), name='modalidad_delete'),
+    # Aquí se incluyen las URLs de otras aplicaciones si es necesario
+]
 
+urlpatterns += [
     path('accounts/', include('accounts.urls')),
 ]
 
 urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
-
-
-
-
-

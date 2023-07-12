@@ -5,14 +5,11 @@
 {% block main %}
     <div class="container mt-5">
         <h1>Crear Modalidad</h1>
-        <form method="post">
+        <form method="post" enctype="multipart/form-data">
             {% csrf_token %}
             {{ form.as_p }}
             <button type="submit" class="btn btn-primary">Guardar</button>
             <a href="{% url 'modalidad_lista' %}" class="btn btn-secondary">Cancelar</a>
-
-                <!-- Resto del formulario -->
-            </form>
         </form>
     </div>
 {% endblock main %}
