@@ -32,11 +32,12 @@
                     <li class="nav-item"><a class="nav-link" href="{% url 'contacto' %}">contacto</a></li>
                     <li class="nav-item"><a class="nav-link" href="{% url 'about' %}">nosotros</a></li>
                     {% if request.user.is_authenticated %}
-                        {% if request.user.accounts.avatar %}
-                            <li class="nav-item">
-                                <img src="{{ request.user.accounts.avatar.url }}" alt="" style="width: 50px; height: 50px;">
-                            </li>
-                        {% endif %}
+                    {% if request.user.accounts3.avatar %}
+                        <li class="nav-item">
+                            <img src="{{ request.user.accounts3.avatar.url }}" alt="" style="width: 50px; height: 50px;">
+                        </li>
+                    {% endif %}
+
                         <li class="nav-item"><a class="nav-link" href="{% url 'mostrar' %}">Hola, {{ request.user.username }}</a></li>
                         <li class="nav-item"><a class="nav-link" href="{% url 'crearcliente' %}">Inscribirme</a></li>
                         <li class="nav-item"><a class="nav-link" href="{% url 'crear_pedido' %}">pago</a></li>

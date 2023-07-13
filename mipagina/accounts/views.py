@@ -1,19 +1,15 @@
-from django.shortcuts import render
+from django.shortcuts import render, redirect
 from django.contrib.auth import login, authenticate
 from django.contrib.auth.decorators import login_required
-from django.contrib.auth.forms import AuthenticationForm
+from django.contrib.auth.forms import AuthenticationForm, UserChangeForm
 from django.contrib.auth.mixins import LoginRequiredMixin
 from django.contrib.auth.models import User
-from django.contrib.auth.views import PasswordChangeView, LogoutView
-from django.shortcuts import render, redirect
-from django.urls import reverse_lazy
+from django.contrib.auth.views import LogoutView
 from accounts import forms
 from accounts import models
-from django.contrib.auth import authenticate, login
-from django.contrib.auth.forms import AuthenticationForm
+from django.forms.fields import EmailField, CharField, ImageField
+from django import forms
 
-
-# Vista para registrar un nuevo usuario
 def register(request):
     if request.method == 'POST':
         form = forms.RegistroUsuarioForm(data=request.POST)
@@ -26,7 +22,6 @@ def register(request):
     return render(request, 'accounts/crear_account.html', {'formulario': form})
 
 
-# Vista para iniciar sesión
 def login_request(request):
     if request.method == 'POST':
         form = AuthenticationForm(request, data=request.POST)
@@ -44,10 +39,31 @@ def login_request(request):
     return render(request, 'accounts/iniciar_sesion.html', {'formulario': form})
 
 
-from django.contrib.auth.decorators import login_required
-from django.contrib.auth.views import LogoutView
-from django.shortcuts import render, redirect
-from . import forms, models
+@login_required
+def mostrar_perfil(request):
+    return render(request, 'accounts/mostrar_account.html')
+
+
+class Logout(LogoutView):
+    template_name = 'accounts/logout_account.html'
+
+
+class EditarUsuarioForm(UserChangeForm):
+    email = forms.EmailField(required=False)
+    first_name = forms.CharField(label='Nombre', max_length=30, required=False)
+    last_name = forms.CharField(label='Apellido', max_length=30, required=False)
+    avatar = forms.ImageField(required=False)
+
+    class Meta:
+        model = User
+        fields = ['username', 'email', 'first_name', 'last_name', 'avatar']
+
+
+class EditarAvatarForm(forms.ModelForm):
+    class Meta:
+        model = models.Accounts3
+        fields = ['avatar']
+
 
 @login_required
 def editar_perfil(request):
@@ -55,38 +71,15 @@ def editar_perfil(request):
     modelo_perfil, _ = models.Accounts3.objects.get_or_create(user=usuario)
     
     if request.method == 'POST':
-        form = forms.EditarUsuarioForm(request.POST, request.FILES)
-        if form.is_valid():
-            data = form.cleaned_data
-            if data.get('email'):
-                usuario.email = data.get('email')
-            if data.get('first_name'):
-                usuario.first_name = data.get('first_name')
-            if data.get('last_name'):
-                usuario.last_name = data.get('last_name')
-            modelo_perfil.avatar = data.get('avatar') if data.get('avatar') else modelo_perfil.avatar
-            modelo_perfil.save()
-            usuario.save()
+        form = EditarUsuarioForm(request.POST, request.FILES, instance=usuario)
+        avatar_form = EditarAvatarForm(request.POST, request.FILES, instance=modelo_perfil)
+        
+        if form.is_valid() and avatar_form.is_valid():
+            form.save()
+            avatar_form.save()
             return redirect('index')
     else:
-        form = forms.EditarUsuarioForm(initial={
-            'email': usuario.email,
-            'first_name': usuario.first_name,
-            'last_name': usuario.last_name,
-            'avatar': modelo_perfil.avatar,
-        })
+        form = EditarUsuarioForm(instance=usuario)
+        avatar_form = EditarAvatarForm(instance=modelo_perfil)
 
-    return render(request, "accounts/editar_perfil.html", {"form": form})
-
-@login_required
-def mostrar_perfil(request):
-    return render(request, 'accounts/mostrar_account.html')
-
-class Logout(LogoutView):
-    template_name = 'accounts/logout_account.html'
-
-
-
-
-
-
+    return render(request, "accounts/editar_perfil.html", {"form": form, "avatar_form": avatar_form})
