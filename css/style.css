@@ -1,0 +1,400 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,800;1,300;1,800&display=swap');
+
+/* R E S E T */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Open Sans", sans-serif !important;
+}
+
+/* H E A D E R */
+
+header {
+    background-color: rgb(77, 41, 18);
+    position: sticky;
+    top: 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 1000;
+}
+
+.titulos2{
+    color: #fff;
+    margin-top: 20px;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.6);
+}
+header h1 {
+    color: rgb(226, 210, 190);
+    font-size: 70px;
+    font-weight: 900;
+    text-align: center;
+    padding: 10px;
+}
+
+header h1 span {
+    color: rgb(129, 82, 52);
+}
+
+header nav ul {
+    list-style: none;
+    display: flex;
+}
+
+header nav ul li {
+    margin: 20px;
+    font-size: x-large;
+}
+
+header nav ul a {
+    text-decoration: none;
+    color: antiquewhite;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.6);
+}
+
+/* Clases */
+
+/* Main */
+main {
+    background-color: rgb(53, 28, 8);
+}
+
+.hero {
+    color: rgb(39, 20, 4);
+    width: 100%;
+    height: 625px;
+    text-align: center;
+    background-image: url(../img/cancha.jpeg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    font-size: 5em;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.6);
+}
+
+.hero h2 {
+    font-size: larger;
+    text-shadow: 0 4px 8px rgba(0, 0, 0, 0.2) ;
+}
+
+.titulo {
+    color: aliceblue;
+    background-color: rgb(39, 20, 4);
+    width: 100%;
+    text-align: center;
+    padding: 20px;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.6);
+}
+
+.titulo div iframe {
+    width: 100%;
+    padding: 20px;
+}
+
+.info {
+    display: flex;
+}
+
+.info img {
+    width: 800px;
+    padding: 20px;
+}
+
+.carousel-slide {
+    width: 40%;
+    height: 337px;
+    background-color: rgb(53, 28, 8);
+}
+
+.info p {
+    color: rgb(255, 255, 255);
+    background-color: rgb(53, 28, 8);
+    width: 100%;
+    padding: 20px;
+    font-size: large;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.6);
+}
+
+.pasion h2 {
+    color: aliceblue;
+    text-align: center;
+    background-color: rgb(39, 20, 4);
+    padding: 20px;
+    height: 337px;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.6);
+}
+
+.pasion {
+    display: flex;
+    justify-content: flex-end; 
+}
+
+.pasion img {
+    height: 337px;
+}
+
+.pasion p {
+    color: rgb(255, 255, 255);
+    width: 50%;
+    font-size: large;
+    text-align: center;
+    background-color: rgb(39, 20, 4);
+    padding: 20px;
+    height: 337px;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.6);
+}
+
+.boton {
+    display: flex;
+    justify-content: center;
+}
+
+.boton a {
+    color: rgb(255, 255, 255);
+    background-color: rgb(226, 166, 114);
+    font-size: 2em;
+    padding: 10px 20px;
+    text-decoration: none;
+    border-radius: 5px;
+    margin: 20px;
+}
+
+section iframe {
+    width: 100%;  
+    height: 500px;
+}
+
+/* estilo tabla */
+
+h2 {
+    text-align: center;
+    padding: 20px;
+    color: #fff;
+}
+
+.table {
+    width: 100%;
+}
+
+.table th, .table td {
+    border: 1px;
+    text-align: left;
+}
+
+.table thead th {
+    background-color: #6F4F28; 
+    color: white; 
+}
+
+.table tbody td, .table tbody th {
+    background-color: #D2B48C;
+    color: #3E2723;
+}
+
+.escudo{
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    height: 200px;
+    width: 200px;
+}
+
+/* Footer */
+
+footer {
+    background-color: rgb(39, 20, 4);
+    display: flex;
+    justify-content: space-between;
+    align-items: end;
+}
+
+footer div a img {
+    width: 70px;
+    height: 70px;
+    margin: 25px;
+}
+
+footer div iframe {
+    width: 400px;  
+    height: 300px;
+    margin: 20px;
+}
+
+/* Página de productos */
+.card-body{
+    margin: 20px;
+}
+
+ul.pagination {
+    display: flex;
+    justify-content: center;
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+
+ul.pagination .page-item {
+    margin: 0 5px;
+}
+
+ul.pagination .page-link {
+    display: block;
+    padding: 10px 15px;
+    text-decoration: none;
+    color: #351a00;
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+}
+
+ul.pagination .page-link:hover {
+    background-color: #dde1e6; 
+}
+
+/* Media queries */
+@media screen and (max-width: 980px) {
+    .hero h2 {
+        font-size: 70px;
+    }
+
+    header {
+        flex-direction: column;
+        position: static;
+    }
+
+    .info img {
+        width: 50%;
+    }
+}
+
+@media screen and (max-width: 750px) {
+    header nav ul {
+        flex-direction: column;
+        margin: 10px;
+    }
+}
+
+/* cards */
+.container-cards {
+    display: flex;
+    flex-wrap: wrap; 
+    gap: 10px; 
+    justify-content: space-around; 
+}
+
+.card {
+    width: 18rem; 
+    margin: 10px; 
+}
+
+.card-title{
+    text-align: center;
+    padding-bottom: 20px;
+    color: #351a00;
+    font-weight: 600;
+}
+
+.card-text{
+    text-align: center;
+}
+
+.btn-primary{
+    background-color: #5c3918;
+    border-radius: 8px;
+    text-decoration: none;
+    color: #fff;
+    margin: 70px;
+}
+
+/* pagina nosotros  */
+
+.historia{
+    color: #ccab80;
+    margin-left: 100px;
+    margin-right: 100px;
+    text-align: center;
+    font-size: large;
+    font-weight:bold
+    
+}
+
+.historia h2{
+    color: #181313;
+}
+
+.historia img{
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    height: 600px;
+    width: 800px;
+    border-radius: 15%;
+    margin-top: 80px;
+}
+
+/* noticias  */
+
+.carousel-slide{
+    width: 50%;
+}
+
+
+/* media query para pantallas con un ancho máximo  */
+@media screen and (max-width: 1711px) {
+    .container-cards {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr); 
+        gap: 10px; 
+    }
+}
+
+/* media query para pantallas con un ancho máximo */
+@media screen and (max-width: 750px) {
+    .container-cards {
+        display: flex;
+        flex-direction: column; 
+        align-items: center; 
+    }
+}
+
+
+/* Pseudo clases */
+
+header nav ul li:hover {
+    font-size: xx-large;
+}
+
+.titulo h2:hover {
+    font-size: xx-large;
+}
+
+.pasion h2:hover {
+    font-size: xx-large;
+}
+
+/* Estilos generales del formulario */
+.mb-3 {
+    margin-bottom: 20px; 
+    width: 100%; 
+    max-width: 600px; 
+    background-color: rgb(53, 28, 8); 
+    color: white; 
+    padding: 20px; 
+    border-radius: 8px; 
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); 
+    margin-left: auto; 
+    margin-right: auto; 
+
+}
+
+
+
