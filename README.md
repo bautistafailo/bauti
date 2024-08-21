@@ -1,0 +1,9 @@
+<h1 align="center">Hi 👋, I'm Juan Bautista Failo</h1>
+<h3 align="center">Welcome to the official website of Club Atlético San Miguel! This website is designed to provide visitors with all the essential information about our football club, its history, upcoming events, and more. Website Structure Inicio (Home): This is the landing page where visitors can get an overview of the club, including the latest news and highlights. Fechas (Dates): This page lists all the important dates for upcoming matches, events, and other relevant club activities. Nosotros (About Us): Learn about the history, mission, and values of Club Atlético San Miguel. This page also features information about the founders, the construction of our field, and our journey as a team. Productos (Products): Here, fans can browse and purchase official club merchandise, including jerseys, hats, and other accessories. Contactos (Contact): This page provides various ways to get in touch with the club, including a contact form for inquiries, complaints, or suggestions. It also features our location on a map and links to our social media profiles.</h3>
+
+<h3 align="left">Connect with me:</h3>
+<p align="left">
+</p>
+
+<h3 align="left">Languages and Tools:</h3>
+<p align="left"> <a href="https://getbootstrap.com" target="_blank" rel="noreferrer"> <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/bootstrap/bootstrap-plain-wordmark.svg" alt="bootstrap" width="40" height="40"/> </a> <a href="https://www.w3schools.com/css/" target="_blank" rel="noreferrer"> <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/css3/css3-original-wordmark.svg" alt="css3" width="40" height="40"/> </a> <a href="https://www.w3.org/html/" target="_blank" rel="noreferrer"> <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/html5/html5-original-wordmark.svg" alt="html5" width="40" height="40"/> </a> </p>
