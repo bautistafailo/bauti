@@ -1,0 +1,30 @@
+footer{
+    background-color: rgb(39, 20, 4);
+    display: flex;
+    justify-content: space-between;
+    align-items: end;
+
+        div{
+
+            a{
+
+                img{
+                    width: 70px;
+                    height: 70px;
+                    margin: 25px;
+                }
+
+            }
+
+        }
+        div{
+
+            iframe{
+                width: 400px;  
+                height: 300px;
+                margin: 20px;
+            }
+
+        }
+
+}

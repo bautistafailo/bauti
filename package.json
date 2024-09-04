@@ -1,0 +1,18 @@
+{
+  "name": "preentrega1failo",
+  "version": "1.0.0",
+  "description": "<h1 align=\"center\">Hi 👋, I'm Juan Bautista Failo</h1>\r <h3 align=\"center\">Welcome to the official website of Club Atlético San Miguel! This website is designed to provide visitors with all the essential information about our football club, its history, upcoming events, and more. Website Structure Inicio (Home): This is the landing page where visitors can get an overview of the club, including the latest news and highlights. Fechas (Dates): This page lists all the important dates for upcoming matches, events, and other relevant club activities. Nosotros (About Us): Learn about the history, mission, and values of Club Atlético San Miguel. This page also features information about the founders, the construction of our field, and our journey as a team. Productos (Products): Here, fans can browse and purchase official club merchandise, including jerseys, hats, and other accessories. Contactos (Contact): This page provides various ways to get in touch with the club, including a contact form for inquiries, complaints, or suggestions. It also features our location on a map and links to our social media profiles.</h3>",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build-css": "node-sass --include-path scss scss/estilos.scss css/estilos.css",
+    "watch-css": "nodemon -e scss -x \"npm run build-css\""
+
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "node-sass": "^9.0.0",
+    "nodemon": "^3.1.4"
+  }
+}

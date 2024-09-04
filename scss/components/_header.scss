@@ -1,0 +1,41 @@
+header{
+    background-color: $color-principal;
+    position: sticky;
+    top: 0;
+    @include flex(flex, space-between, center);
+    z-index: 1000;
+
+    h1{
+        color: $color-letras;
+        font-size: nth($fuente, 4 );
+        font-weight: 900;
+        text-align: center;
+        padding: 10px;
+        span{
+            color: rgb(129, 82, 52);
+        }
+        
+    }
+
+    nav{
+
+        ul{
+            list-style: none;
+            display: flex;
+            li{
+                margin: 20px;
+                font-size: nth($fuente , 1 );
+                transition: background-color 0.9s ease;
+                a{
+                
+                    @extend%enlaces;
+                color: $color-letras;
+                transition: color 0.5s ease, background-color 0.5s ease;
+                
+                }
+                
+            }
+        }
+
+    }
+}

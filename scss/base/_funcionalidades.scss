@@ -1,0 +1,29 @@
+//*variables
+$color-principal:rgb(77, 41, 18);
+$color-secundario:rgb(39, 20, 4);
+$color-terciario: rgb(53, 28, 8);
+$color-letras:rgb(226, 210, 190);
+
+//*listas
+$fuente: 20px, 40px, 60px, 80px;
+
+//*mapas
+$boton:(
+    border-radius: 5px,
+    bg-color: rgb(226, 166, 114),
+    margin: 20px,
+);
+
+//*extends
+%enlaces {
+    text-decoration: none;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.6);
+}
+
+//*mixin
+
+@mixin flex($flex, $justify, $align){
+    display: $flex;
+    justify-content: $justify;
+    align-items: $align;
+}

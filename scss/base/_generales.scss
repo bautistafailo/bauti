@@ -1,0 +1,317 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,800;1,300;1,800&display=swap');
+
+// R E S E T
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Open Sans", sans-serif !important;
+}
+a:hover {
+    color: #ddd; // Color del texto en hover
+    background-color: $color-terciario; // Color de fondo en hover
+    border-radius: 10%;
+}
+.titulos2 {
+    color: $color-letras;
+    margin-top: 20px;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.6);
+}
+
+.hero {
+    color: $color-secundario;
+    width: 100%;
+    height: 625px;
+    text-align: center;
+    background-image: url(../img/cancha.jpeg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    font-size: nth($fuente, 4);
+    display: flex;
+    flex-direction: column;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.6);
+    @include flex(flex, center, center);
+
+    h2 {
+        font-size: nth($fuente, 1);
+        text-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    }
+}
+
+.titulo {
+    color: $color-letras;
+    background-color: $color-secundario;
+    width: 100%;
+    text-align: center;
+    padding: 20px;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.6);
+
+}
+
+.titulo iframe {
+    width: 100%;
+    padding: 20px;
+    transition: transform 0.5s ease; 
+}
+
+.titulo iframe:hover {
+    transform: scale(1.02); 
+}
+
+
+.info {
+    display: flex;
+
+    img {
+        width: 800px;
+        padding: 20px;
+    }
+}
+
+.info p {
+    color: $color-letras;
+    background-color: $color-terciario;
+    width: 100%;
+    padding: 20px;
+    font-size: nth($fuente, 1);
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.6);
+}
+
+/* Estilos para la sección Pasión */
+.pasion h2 {
+    color: $color-letras;
+    text-align: center;
+    background-color: $color-secundario;
+    padding: 20px;
+    height: 337px;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.6);
+    transition-property: font-size, background-color;
+    transition-duration: 3s;
+    transition-timing-function: ease; /* Ajustado a una función de tiempo válida */
+}
+
+.pasion h2:hover {
+    font-size: nth($fuente, 2);
+    background-color: lighten($color-secundario, 10%); /* Ejemplo para un cambio de fondo */
+    /* Puedes ajustar o añadir más estilos en hover si es necesario */
+}
+
+
+.pasion {
+    display: flex;
+    justify-content: flex-end;
+}
+
+.pasion img {
+    height: 337px;
+    transition: transform 0.5s ease;
+}
+
+.pasion img:hover {
+    transform: scale(1.05); 
+}
+
+.pasion p {
+    color: $color-letras;
+    width: 50%;
+    font-size: nth($fuente, 1);
+    text-align: center;
+    background-color: $color-secundario;
+    padding: 20px;
+    height: 337px;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.6);
+}
+
+.table {
+    width: 100%;
+}
+
+.table th,
+.table td {
+    border: 1px;
+    text-align: left;
+}
+
+.table thead th {
+    background-color: #6F4F28;
+    color: white;
+}
+
+.table tbody td,
+.table tbody th {
+    background-color: #D2B48C;
+    color: #3f2723;
+}
+
+.escudo {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    height: 200px;
+    width: 200px;
+}
+
+.boton {
+    @include flex(flex, center, center);
+}
+
+.boton a {
+    color: $color-letras;
+    background-color: map-get($boton, bg-color);
+    font-size: nth($fuente, 2);
+    padding: 10px 20px;
+    text-decoration: none;
+    border-radius: map-get($boton, border-radius);
+    margin: map-get($boton, margin);
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.boton a:hover {
+    background-color: darken(map-get($boton, bg-color), 10%);
+    color: white;
+}
+
+
+/* Página de productos */
+
+.card-body {
+    margin: 20px;
+}
+
+ul.pagination {
+    display: flex;
+    justify-content: center;
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    @include flex(flex, center, center);
+}
+
+ul.pagination .page-item {
+    margin: 0 5px;
+}
+
+ul.pagination .page-link {
+    display: block;
+    padding: 10px 15px;
+    text-decoration: none;
+    color: $color-secundario;
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+}
+
+ul.pagination .page-link:hover {
+    background-color: #dde1e6;
+}
+
+/* cards */
+.container-cards {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    justify-content: space-around;
+    @include flex(flex, space-around, center);
+}
+
+.card {
+    width: 18rem;
+    margin: 10px;
+    border: 1px solid #ddd; 
+    border-radius: 8px; 
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); 
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.card:hover {
+    transform: scale(1.02); 
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+    }
+.card-title {
+    text-align: center;
+    padding-bottom: 20px;
+    color: $color-secundario;
+    font-weight: 600;
+}
+
+.card-text {
+    text-align: center;
+}
+
+.btn-primary {
+    background-color: map-get($boton, bg-color);
+    border-radius: map-get($boton, border-radius);
+    text-decoration: none;
+    color: #fff;
+    margin: map-get($boton, margin);
+}
+
+/* pagina nosotros */
+
+/* Estilos para la clase .hist */
+.hist {
+    color: #333;
+    margin: 20px auto;
+    padding: 20px;
+    max-width: 800px;
+    text-align: center;
+    font-size: nth($fuente, 1);
+    line-height: 1.6;
+    background-color: $color-secundario;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: background-color 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+}
+
+.hist img {
+    display: block;
+    margin: 20px auto;
+    max-width: 100%;
+    height: auto;
+    border-radius: 10px;
+}
+
+.hist h2 {
+    color: #413e3e;
+    margin-top: 20px;
+    font-size: nth($fuente, 2);
+    font-weight: bold;
+}
+
+.hist p {
+    margin-top: 10px;
+    font-size: nth($fuente, 1);
+    color: $color-letras;
+}
+
+.hist:hover {
+    background-color: $color-secundario;
+    box-shadow: 0 6px 12px rgba(255, 255, 255, 0.2);
+}
+
+/* noticias */
+
+.carousel-slide {
+    width: 50%;
+}
+
+
+
+
+
+.mb-3 {
+    margin-bottom: 20px;
+    width: 100%;
+    max-width: 600px;
+    background-color: rgb(53, 28, 8);
+    color: white;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    margin-left: auto;
+    margin-right: auto;
+}
