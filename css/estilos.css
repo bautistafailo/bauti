@@ -187,6 +187,8 @@ a:hover {
   display: flex;
   justify-content: center;
   align-items: center; }
+  .boton body {
+    scroll-behavior: smooth; }
 
 .boton a {
   color: #e2d2be;

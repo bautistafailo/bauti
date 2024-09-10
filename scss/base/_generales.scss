@@ -219,6 +219,7 @@ a:hover {
 
 .boton {
     @include flex(flex, center, center);
+    body { scroll-behavior: smooth;}
 }
 
 .boton a {
