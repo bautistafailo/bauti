@@ -4,6 +4,7 @@ header{
     top: 0;
     @include flex(flex, space-between, center);
     z-index: 1000;
+    }
 
     h1{
         color: $color-letras;
@@ -17,25 +18,34 @@ header{
         
     }
 
-    nav{
-
-        ul{
-            list-style: none;
-            display: flex;
-            li{
-                margin: 20px;
-                font-size: nth($fuente , 1 );
-                transition: background-color 0.9s ease;
-                a{
+    header {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        
+        img {
+            height: 100%; // Para que la imagen tome toda la altura del header/nav
+            max-height: 100px; // Puedes ajustar esta altura según necesites
+            width: auto; // Mantiene las proporciones de la imagen
+        }
+    
+        nav {
+            ul {
+                list-style: none;
+                display: flex;
                 
-                    @extend%enlaces;
-                color: $color-letras;
-                transition: color 0.5s ease, background-color 0.5s ease;
-                
+                li {
+                    margin: 20px;
+                    font-size: nth($fuente, 1);
+                    transition: background-color 0.9s ease;
+    
+                    a {
+                        @extend %enlaces;
+                        color: $color-letras;
+                        transition: color 0.5s ease, background-color 0.5s ease;
+                    }
                 }
-                
             }
         }
-
     }
-}
+    

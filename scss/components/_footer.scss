@@ -1,30 +1,26 @@
-footer{
+footer {
     background-color: rgb(39, 20, 4);
     display: flex;
     justify-content: space-between;
-    align-items: end;
+    align-items: flex-end; /* Alinea los elementos en la parte inferior */
+    flex-wrap: wrap; /* Permite que los elementos se ajusten a varias líneas si es necesario */
+}
 
-        div{
+footer div {
+    display: flex;
+    align-items: center; /* Alinea verticalmente los elementos en el div */
+    margin: 10px;
+}
 
-            a{
+footer iframe {
+    width: 400px;
+    height: 300px;
+    margin: 20px;
+    flex: 1; /* Permite que el iframe ocupe el espacio disponible */
+}
 
-                img{
-                    width: 70px;
-                    height: 70px;
-                    margin: 25px;
-                }
-
-            }
-
-        }
-        div{
-
-            iframe{
-                width: 400px;  
-                height: 300px;
-                margin: 20px;
-            }
-
-        }
-
+footer a img {
+    width: 70px;
+    height: 70px;
+    margin: 25px;
 }

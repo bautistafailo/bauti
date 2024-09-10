@@ -83,14 +83,11 @@ a:hover {
   text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.6);
   transition-property: font-size, background-color;
   transition-duration: 3s;
-  transition-timing-function: ease;
-  /* Ajustado a una función de tiempo válida */ }
+  transition-timing-function: ease; }
 
 .pasion h2:hover {
   font-size: 40px;
-  background-color: #552c09;
-  /* Ejemplo para un cambio de fondo */
-  /* Puedes ajustar o añadir más estilos en hover si es necesario */ }
+  background-color: #552c09; }
 
 .pasion {
   display: flex;
@@ -284,14 +281,24 @@ header {
   justify-content: space-between;
   align-items: center;
   z-index: 1000; }
-  header h1 {
-    color: #e2d2be;
-    font-size: 80px;
-    font-weight: 900;
-    text-align: center;
-    padding: 10px; }
-    header h1 span {
-      color: #815234; }
+
+h1 {
+  color: #e2d2be;
+  font-size: 80px;
+  font-weight: 900;
+  text-align: center;
+  padding: 10px; }
+  h1 span {
+    color: #815234; }
+
+header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between; }
+  header img {
+    height: 100%;
+    max-height: 100px;
+    width: auto; }
   header nav ul {
     list-style: none;
     display: flex; }
@@ -305,6 +312,13 @@ header {
 
 main {
   background-color: #351c08; }
+  main h1 {
+    color: #e2d2be;
+    font-size: 60px;
+    font-weight: 900;
+    text-align: center;
+    padding: 10px;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.6); }
   main .hero {
     color: #271404;
     width: 100%;
@@ -320,9 +334,11 @@ main {
     justify-content: center;
     align-items: center;
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.6); }
-    main .hero h2 {
-      font-size: 80px;
-      text-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); }
+  main h2 {
+    font-size: 80px;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.6);
+    font-size: 2.5rem;
+    text-align: center; }
   main section iframe {
     width: 100%;
     height: 500px; }
@@ -330,35 +346,48 @@ main {
     text-align: center;
     padding: 20px;
     color: #fff; }
-    main h2 .titulo {
-      color: aliceblue;
-      background-color: #271404;
+  main .titulo {
+    color: aliceblue;
+    background-color: #271404;
+    width: 100%;
+    text-align: center;
+    padding: 20px;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.6); }
+    main .titulo div iframe {
       width: 100%;
-      text-align: center;
-      padding: 20px;
-      text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.6); }
-      main h2 .titulo div iframe {
-        width: 100%;
-        padding: 20px; }
-    main h2 .info {
-      display: flex; }
-      main h2 .info img {
-        width: 800px;
-        padding: 20px; }
+      padding: 20px; }
+  main .info {
+    display: flex; }
+    main .info img {
+      width: 800px;
+      padding: 20px; }
 
 footer {
   background-color: #271404;
   display: flex;
   justify-content: space-between;
-  align-items: end; }
-  footer div a img {
-    width: 70px;
-    height: 70px;
-    margin: 25px; }
-  footer div iframe {
-    width: 400px;
-    height: 300px;
-    margin: 20px; }
+  align-items: flex-end;
+  /* Alinea los elementos en la parte inferior */
+  flex-wrap: wrap;
+  /* Permite que los elementos se ajusten a varias líneas si es necesario */ }
+
+footer div {
+  display: flex;
+  align-items: center;
+  /* Alinea verticalmente los elementos en el div */
+  margin: 10px; }
+
+footer iframe {
+  width: 400px;
+  height: 300px;
+  margin: 20px;
+  flex: 1;
+  /* Permite que el iframe ocupe el espacio disponible */ }
+
+footer a img {
+  width: 70px;
+  height: 70px;
+  margin: 25px; }
 
 @media screen and (max-width: 980px) {
   .hero h2 {
@@ -396,6 +425,110 @@ footer {
     max-width: 100%;
     height: auto; }
   .hist h2 {
-    font-size: 1.2em; }
+    font-size: 20px; }
   .hist p {
-    font-size: 1em; } }
+    font-size: 20px; } }
+
+@media screen and (max-width: 1700px) {
+  .info img {
+    width: 60%;
+    /* Ajusta el ancho de la imagen */ }
+  h2 {
+    font-size: 40px;
+    /* Tamaño del h2 ajustado */ }
+  p {
+    font-size: 20px;
+    /* Texto ligeramente más pequeño */
+    line-height: 1.5; } }
+
+@media screen and (max-width: 800px) {
+  .info {
+    flex-direction: column;
+    align-items: center; }
+  .info img {
+    width: 80%;
+    /* Reduce el tamaño de la imagen */ }
+  h2 {
+    font-size: 40px; }
+  p {
+    font-size: 20px;
+    line-height: 1.4; }
+  .carousel-item img {
+    max-width: 100%;
+    height: auto; } }
+
+@media screen and (max-width: 400px) {
+  .info img {
+    width: 100%; }
+  h2 {
+    font-size: 40px; }
+  p {
+    font-size: 20px;
+    line-height: 1.3; }
+  .carousel-item img {
+    max-width: 100%;
+    height: auto; } }
+
+@media screen and (max-width: 1700px) {
+  .pasion {
+    flex-direction: column;
+    align-items: center; }
+    .pasion h2 {
+      font-size: 60px;
+      height: auto;
+      padding: 15px; }
+    .pasion img {
+      width: 60%;
+      height: auto;
+      margin-bottom: 15px; }
+    .pasion p {
+      width: 80%;
+      font-size: 40px;
+      height: auto;
+      padding: 15px; } }
+
+@media screen and (max-width: 800px) {
+  .pasion h2 {
+    font-size: 40px; }
+  .pasion img {
+    width: 80%; }
+  .pasion p {
+    width: 90%;
+    font-size: 20px; } }
+
+@media screen and (max-width: 400px) {
+  .pasion h2 {
+    font-size: 20px; }
+  .pasion img {
+    width: 95%; }
+  .pasion p {
+    width: 100%;
+    font-size: 20px;
+    padding: 10px; } }
+
+@media screen and (max-width: 1700px) {
+  footer iframe {
+    width: 60%;
+    height: auto;
+    max-width: 500px; }
+  footer a img {
+    width: 60px;
+    height: 60px; } }
+
+@media screen and (max-width: 800px) {
+  footer iframe {
+    width: 80%;
+    height: auto; }
+  footer a img {
+    width: 50px;
+    height: 50px;
+    margin: 10px; } }
+
+@media screen and (max-width: 540px) {
+  footer iframe {
+    width: 100%;
+    height: 200px; }
+  footer a img {
+    width: 40px;
+    height: 40px;
+    margin: 5px; } }

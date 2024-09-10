@@ -92,15 +92,13 @@ a:hover {
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.6);
     transition-property: font-size, background-color;
     transition-duration: 3s;
-    transition-timing-function: ease; /* Ajustado a una función de tiempo válida */
+    transition-timing-function: ease;
 }
 
 .pasion h2:hover {
     font-size: nth($fuente, 2);
-    background-color: lighten($color-secundario, 10%); /* Ejemplo para un cambio de fondo */
-    /* Puedes ajustar o añadir más estilos en hover si es necesario */
+    background-color: lighten($color-secundario, 10%);
 }
-
 
 .pasion {
     display: flex;
@@ -126,7 +124,6 @@ a:hover {
     height: 337px;
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.6);
 }
-
 .table {
     width: 100%;
 }
