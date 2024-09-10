@@ -27,7 +27,8 @@ a:hover {
   width: 100%;
   height: 625px;
   text-align: center;
-  background-image: url(../img/cancha.jpeg);
+  background-image: url(../img/equipofestejo.jpeg);
+  /* Asegúrate de que la ruta es correcta */
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
@@ -38,10 +39,58 @@ a:hover {
   text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.6);
   display: flex;
   justify-content: center;
-  align-items: center; }
-  .hero h2 {
-    font-size: 20px;
-    text-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); }
+  align-items: center;
+  position: relative;
+  /* Necesario para el efecto de desvanecimiento */
+  /* Animación de zoom y desvanecimiento del fondo */
+  animation: zoomFade 20s infinite ease-in-out; }
+  .hero h1 {
+    font-size: 80px;
+    text-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    /* Animación de entrada del texto */
+    animation: fadeIn 3s ease-in-out; }
+
+/* Animación de zoom y desvanecimiento del fondo */
+@keyframes zoomFade {
+  0% {
+    background-size: 100%;
+    opacity: 0.8; }
+  50% {
+    background-size: 110%;
+    opacity: 1; }
+  100% {
+    background-size: 100%;
+    opacity: 0.8; } }
+
+/* Animación de entrada del texto */
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+    transform: translateY(-20px); }
+  100% {
+    opacity: 1;
+    transform: translateY(0); } }
+
+/* Animación de zoom y desvanecimiento del fondo */
+@keyframes zoomFade {
+  0% {
+    background-size: 100%;
+    opacity: 0.8; }
+  50% {
+    background-size: 110%;
+    opacity: 1; }
+  100% {
+    background-size: 100%;
+    opacity: 0.8; } }
+
+/* Animación de entrada del texto */
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+    transform: translateY(-20px); }
+  100% {
+    opacity: 1;
+    transform: translateY(0); } }
 
 .titulo {
   color: #e2d2be;
@@ -69,7 +118,7 @@ a:hover {
   color: #e2d2be;
   background-color: #351c08;
   width: 100%;
-  padding: 20px;
+  padding: 40px;
   font-size: 20px;
   text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.6); }
 
@@ -106,7 +155,7 @@ a:hover {
   font-size: 20px;
   text-align: center;
   background-color: #271404;
-  padding: 20px;
+  padding: 40px;
   height: 337px;
   text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.6); }
 
@@ -124,7 +173,7 @@ a:hover {
 
 .table tbody td,
 .table tbody th {
-  background-color: #D2B48C;
+  background-color: #bea079;
   color: #3f2723; }
 
 .escudo {
@@ -193,7 +242,7 @@ ul.pagination .page-link:hover {
   align-items: center; }
 
 .card {
-  width: 18rem;
+  width: 19rem;
   margin: 10px;
   border: 1px solid #ddd;
   border-radius: 8px;
@@ -208,7 +257,7 @@ ul.pagination .page-link:hover {
   text-align: center;
   padding-bottom: 20px;
   color: #271404;
-  font-weight: 600; }
+  font-weight: 500; }
 
 .card-text {
   text-align: center; }
@@ -218,10 +267,11 @@ ul.pagination .page-link:hover {
   border-radius: 5px;
   text-decoration: none;
   color: #fff;
-  margin: 20px; }
+  margin: 20px;
+  display: flex;
+  justify-content: center; }
 
 /* pagina nosotros */
-/* Estilos para la clase .hist */
 .hist {
   color: #333;
   margin: 20px auto;
@@ -367,9 +417,7 @@ footer {
   display: flex;
   justify-content: space-between;
   align-items: flex-end;
-  /* Alinea los elementos en la parte inferior */
-  flex-wrap: wrap;
-  /* Permite que los elementos se ajusten a varias líneas si es necesario */ }
+  flex-wrap: wrap; }
 
 footer div {
   display: flex;
@@ -380,9 +428,7 @@ footer div {
 footer iframe {
   width: 400px;
   height: 300px;
-  margin: 20px;
-  flex: 1;
-  /* Permite que el iframe ocupe el espacio disponible */ }
+  margin: 20px; }
 
 footer a img {
   width: 70px;
@@ -408,7 +454,8 @@ footer a img {
   .container-cards {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
-    gap: 10px; } }
+    gap: 10px;
+    margin-left: 350px; } }
 
 /* media query para pantallas con un ancho máximo */
 @media screen and (max-width: 750px) {

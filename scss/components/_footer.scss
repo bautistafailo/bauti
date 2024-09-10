@@ -2,8 +2,8 @@ footer {
     background-color: rgb(39, 20, 4);
     display: flex;
     justify-content: space-between;
-    align-items: flex-end; /* Alinea los elementos en la parte inferior */
-    flex-wrap: wrap; /* Permite que los elementos se ajusten a varias líneas si es necesario */
+    align-items: flex-end; 
+    flex-wrap: wrap;
 }
 
 footer div {
@@ -16,7 +16,6 @@ footer iframe {
     width: 400px;
     height: 300px;
     margin: 20px;
-    flex: 1; /* Permite que el iframe ocupe el espacio disponible */
 }
 
 footer a img {
