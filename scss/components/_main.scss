@@ -1,79 +1,75 @@
-main{
-    background-color: rgb(53, 28, 8);
+// Estilos para el contenedor principal
+main {
+    background-color: rgb(53, 28, 8); 
 
-    h1{
-        color: $color-letras;
-        font-size: nth($fuente, 3 );
-        font-weight: 900;
-        text-align: center;
-        padding: 10px;
-        text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.6);
-        
+    // Estilos para el título principal (h1)
+    h1 {
+        color: $color-letras; 
+        font-size: nth($fuente, 3); 
+        font-weight: 900; 
+        text-align: center; 
+        padding: 10px; 
+        text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.6); 
     }
 
-    .hero{
-    color: rgb(39, 20, 4);
-    width: 100%;
-    height: 625px;
-    text-align: center;
-    background-image: url(../img/cancha.jpeg);
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-position: center;
-    background-attachment: fixed;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.6);
+    // Estilos para la sección hero
+    .hero {
+        color: rgb(39, 20, 4); 
+        width: 100%; 
+        height: 625px; 
+        text-align: center; 
+        background-image: url(../img/otroequipo.jpeg);
+        background-repeat: no-repeat; 
+        background-size: cover; 
+        background-position: center; 
+        background-attachment: fixed; 
+        display: flex; 
+        flex-direction: column; 
+        justify-content: center; 
+        align-items: center; 
+        text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.6); 
+    }
+
+    // Estilos para los subtítulos (h2) dentro del main
+    h2 {
+        font-size: nth($fuente, 4); 
+        text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.6); 
+        font-size: 2.5rem; 
+        text-align: center; 
+    }
+
+    // Estilos para la sección de iframe
+    section {
+        iframe {
+            width: 100%; 
+            height: 500px; 
+        }
+    }
+
+    // Estilos para la clase titulo
+    .titulo {
+        color: aliceblue; 
+        background-color: rgb(39, 20, 4); 
+        width: 100%; // Ancho completo
+        text-align: center; 
+        padding: 20px; 
+        text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.6); 
+
+        // Estilos para iframes dentro de un div dentro de .titulo
+        div iframe {
+            width: 100%; 
+            padding: 20px; 
+        }
+    }
+
+    // Estilos para la clase info
+    .info {
+        display: flex; 
+        img {
+            width: 800px; 
+            padding: 20px; 
+        }
+    }
 }
 
-
-        h2{
-        font-size: nth($fuente, 4);
-        text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.6);
-        font-size: 2.5rem;
-        text-align: center;
-        }
-
-    section{
-
-        iframe{
-            width: 100%;  
-            height: 500px;
-        }
-
-    }
-    
-        h2 {
-            text-align: center;
-            padding: 20px;
-            color: #fff;
-            }
-
-    .titulo {
-    color: aliceblue;
-    background-color: rgb(39, 20, 4);
-    width: 100%;
-    text-align: center;
-    padding: 20px;
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.6);
-
-        div iframe {
-        width: 100%;
-        padding: 20px;
-        }
-    }
-
-    .info {
-    display: flex;
-            img {
-            width: 800px;
-            padding: 20px;
-        }
-    }
-
-    }
-
-    
 

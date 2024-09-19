@@ -40,16 +40,12 @@ a:hover {
   justify-content: center;
   align-items: center;
   position: relative;
-  /* Necesario para el efecto de desvanecimiento */
-  /* Animación de zoom y desvanecimiento del fondo */
   animation: zoomFade 20s infinite ease-in-out; }
   .hero h1 {
     font-size: 80px;
     text-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-    /* Animación de entrada del texto */
     animation: fadeIn 3s ease-in-out; }
 
-/* Animación de zoom y desvanecimiento del fondo */
 @keyframes zoomFade {
   0% {
     background-size: 100%;
@@ -61,7 +57,6 @@ a:hover {
     background-size: 100%;
     opacity: 0.8; } }
 
-/* Animación de entrada del texto */
 @keyframes fadeIn {
   0% {
     opacity: 0;
@@ -70,27 +65,7 @@ a:hover {
     opacity: 1;
     transform: translateY(0); } }
 
-/* Animación de zoom y desvanecimiento del fondo */
-@keyframes zoomFade {
-  0% {
-    background-size: 100%;
-    opacity: 0.8; }
-  50% {
-    background-size: 110%;
-    opacity: 1; }
-  100% {
-    background-size: 100%;
-    opacity: 0.8; } }
-
-/* Animación de entrada del texto */
-@keyframes fadeIn {
-  0% {
-    opacity: 0;
-    transform: translateY(-20px); }
-  100% {
-    opacity: 1;
-    transform: translateY(0); } }
-
+/* Página principal */
 .titulo {
   color: #e2d2be;
   background-color: #271404;
@@ -121,7 +96,6 @@ a:hover {
   font-size: 20px;
   text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.6); }
 
-/* Estilos para la sección Pasión */
 .pasion h2 {
   color: #e2d2be;
   text-align: center;
@@ -158,6 +132,7 @@ a:hover {
   height: 337px;
   text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.6); }
 
+/* Estilos para tablas */
 .table {
   width: 100%; }
 
@@ -175,6 +150,7 @@ a:hover {
   background-color: #bea079;
   color: #3f2723; }
 
+/* Estilos para otras secciones */
 .escudo {
   display: block;
   margin-left: auto;
@@ -232,7 +208,7 @@ ul.pagination .page-link {
 ul.pagination .page-link:hover {
   background-color: #dde1e6; }
 
-/* cards */
+/* Estilos para tarjetas */
 .container-cards {
   display: flex;
   flex-wrap: wrap;
@@ -272,7 +248,7 @@ ul.pagination .page-link:hover {
   display: flex;
   justify-content: center; }
 
-/* pagina nosotros */
+/* Página nosotros */
 .hist {
   color: #333;
   margin: 20px auto;
@@ -308,7 +284,7 @@ ul.pagination .page-link:hover {
   background-color: #271404;
   box-shadow: 0 6px 12px rgba(255, 255, 255, 0.2); }
 
-/* noticias */
+/* Noticias */
 .carousel-slide {
   width: 50%; }
 
@@ -375,7 +351,7 @@ main {
     width: 100%;
     height: 625px;
     text-align: center;
-    background-image: url(../img/cancha.jpeg);
+    background-image: url(../img/otroequipo.jpeg);
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
@@ -393,10 +369,6 @@ main {
   main section iframe {
     width: 100%;
     height: 500px; }
-  main h2 {
-    text-align: center;
-    padding: 20px;
-    color: #fff; }
   main .titulo {
     color: aliceblue;
     background-color: #271404;
@@ -423,7 +395,6 @@ footer {
 footer div {
   display: flex;
   align-items: center;
-  /* Alinea verticalmente los elementos en el div */
   margin: 10px; }
 
 footer iframe {
@@ -437,20 +408,25 @@ footer a img {
   margin: 25px; }
 
 @media screen and (max-width: 980px) {
+  /* Ajusta el tamaño de la fuente del título en la sección hero */
   .hero h2 {
     font-size: 70px; }
+  /* Cambia la organizacion del header a una columna */
   header {
     flex-direction: column;
     position: static; }
+  /* Achica el tamaño de la imagen en la sección info */
   .info img {
     width: 50%; } }
 
 @media screen and (max-width: 750px) {
+  /* Cambia a columna en pantallas más pequeñas */
   header nav ul {
     flex-direction: column;
     margin: 10px; } }
 
 @media screen and (max-width: 1711px) {
+  /* Reorganiza las tarjetas en un grid de 2 columnas */
   .container-cards {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
@@ -460,12 +436,14 @@ footer a img {
     margin: 0 auto;
     width: 100%;
     box-sizing: border-box; }
+  /* Ajusta el ancho de las tarjetas */
   .card {
     max-width: 500px;
     width: 100%;
     margin: 0 auto; } }
 
 @media screen and (max-width: 750px) {
+  /* Cambia la disposición de las tarjetas a una columna y ajusta los margenes y el padding */
   .container-cards {
     display: flex;
     flex-direction: column;
@@ -474,15 +452,18 @@ footer a img {
     padding: 0 15px;
     margin: 0 auto;
     width: 100%; }
+  /* Ajusta el tamaño de las tarjetas para pantallas mas chicas */
   .card {
     width: 90%;
     max-width: 400px;
     margin: 0 auto; }
+  /* Ajusta la imagen dentro de la tarjeta para que ocupe el ancho completo */
   .card img {
     width: 100%;
     height: auto; } }
 
 @media screen and (max-width: 450px) {
+  /* Ajusta las tarjetas para pantallas muy pequeñas */
   .container-cards {
     display: flex;
     flex-direction: column;
@@ -490,26 +471,30 @@ footer a img {
     gap: 15px;
     margin: 0;
     width: 100%; }
+  /* Reduce el tamaño de las tarjetas en pantallas mas pequeñas */
   .card {
     width: 70%;
     margin: 0 auto; } }
 
 @media (max-width: 850px) {
+  /* Ajusta los márgenes y el tamaño de la letra en la sección hist */
   .hist {
     padding: 10px;
     max-width: 100%; }
+  /* Asegura que las imágenes en la seccion hist ocupen el ancho completo */
   .hist img {
     max-width: 100%;
     height: auto; }
+  /* Ajusta el tamaño de la fuente en los títulos y parrafos de la sección hist */
   .hist h2 {
     font-size: 20px; }
   .hist p {
     font-size: 20px; } }
 
 @media screen and (max-width: 1700px) {
+  /* Ajustes generales para la sección info */
   .info img {
-    width: 60%;
-    /* Ajusta el ancho de la imagen */ }
+    width: 60%; }
   h2 {
     font-size: 40px; }
   p {
@@ -517,6 +502,7 @@ footer a img {
     line-height: 1.5; } }
 
 @media screen and (max-width: 800px) {
+  /* Reorganiza la sección info a columna y ajusta las imagenes y texto */
   .info {
     flex-direction: column;
     align-items: center; }
@@ -527,11 +513,13 @@ footer a img {
   p {
     font-size: 20px;
     line-height: 1.4; }
+  /* Asegura que las imágenes del carrusel se ajusten correctamente */
   .carousel-item img {
     max-width: 100%;
     height: auto; } }
 
 @media screen and (max-width: 400px) {
+  /* Ajustes finales para pantallas muy pequeñas en la seccion info */
   .info img {
     width: 100%; }
   h2 {
@@ -544,6 +532,7 @@ footer a img {
     height: auto; } }
 
 @media screen and (max-width: 1700px) {
+  /* Reorganiza la seccion pasion a columna y ajusta imágenes y textos */
   .pasion {
     flex-direction: column;
     align-items: center; }
@@ -562,25 +551,28 @@ footer a img {
       padding: 15px; } }
 
 @media screen and (max-width: 800px) {
+  /* Ajusta los estilos en la sección pasion para pantallas pequeñas */
   .pasion h2 {
     font-size: 40px; }
-  .pasion img {
+  img {
     width: 80%; }
-  .pasion p {
+  p {
     width: 90%;
     font-size: 20px; } }
 
 @media screen and (max-width: 400px) {
+  /* Ajustes finales para pantallas muy chicas en la sección pasion */
   .pasion h2 {
     font-size: 20px; }
-  .pasion img {
+  img {
     width: 95%; }
-  .pasion p {
+  p {
     width: 100%;
     font-size: 20px;
     padding: 10px; } }
 
 @media screen and (max-width: 1700px) {
+  /* Ajusta los elementos del footer para pantallas mas chicas */
   footer iframe {
     width: 60%;
     height: auto;
@@ -590,6 +582,7 @@ footer a img {
     height: 60px; } }
 
 @media screen and (max-width: 800px) {
+  /* Ajusta el tamaño de los elementos del footer en pantallas chicas */
   footer iframe {
     width: 80%;
     height: auto; }
@@ -599,6 +592,7 @@ footer a img {
     margin: 10px; } }
 
 @media screen and (max-width: 540px) {
+  /* Ajustes finales para el footer en pantallas mas chicas */
   footer iframe {
     width: 100%;
     height: 200px; }

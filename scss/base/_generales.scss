@@ -1,5 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,800;1,300;1,800&display=swap');
 
+
 // R E S E T
 * {
     margin: 0;
@@ -8,27 +9,31 @@
 }
 
 body {
+    // Aplica la fuente importada Open Sans a todo el documento.
     font-family: "Open Sans", sans-serif !important;
 }
 
 a:hover {
-    color: #ddd; // Color del texto en hover
-    background-color: $color-terciario; // Color de fondo en hover
+    // Estilos para los enlaces al pasar el mouse, cambia el color del texto y el fondo, añadiendo un borde redondo
+    color: #ddd;
+    background-color: $color-terciario;
     border-radius: 10%;
 }
 
 .titulos2 {
+    // Estilos para títulos secundarios, color definido por variable y sombra de texto para mayor legibilidad
     color: $color-letras;
     margin-top: 20px;
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.6);
 }
 
 .hero {
+    // Estilos de la sección hero, imagen de fondo con un efecto de zoom 
     color: $color-secundario;
     width: 100%;
     height: 625px;
     text-align: center;
-    background-image: url(../img/equipofestejo.jpeg); 
+    background-image: url(../img/equipofestejo.jpeg);
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
@@ -38,20 +43,20 @@ a:hover {
     flex-direction: column;
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.6);
     @include flex(flex, center, center);
-    position: relative; /* Necesario para el efecto de desvanecimiento */
+    position: relative;
 
-    /* Animación de zoom y desvanecimiento del fondo */
+    // Animación de zoom 
     animation: zoomFade 20s infinite ease-in-out;
 
     h1 {
+        // Estilos del título principal dentro de la hero section con animacion de aparicion
         font-size: nth($fuente, 4);
         text-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-        /* Animación de entrada del texto */
         animation: fadeIn 3s ease-in-out;
     }
 }
 
-/* Animación de zoom y desvanecimiento del fondo */
+// Animación de zoom 
 @keyframes zoomFade {
     0% {
         background-size: 100%;
@@ -67,7 +72,7 @@ a:hover {
     }
 }
 
-/* Animación de entrada del texto */
+// Animación para hacer aparecer el texto con un efecto de deslizamiento desde arriba.
 @keyframes fadeIn {
     0% {
         opacity: 0;
@@ -79,56 +84,31 @@ a:hover {
     }
 }
 
-/* Animación de zoom y desvanecimiento del fondo */
-@keyframes zoomFade {
-    0% {
-        background-size: 100%;
-        opacity: 0.8;
-    }
-    50% {
-        background-size: 110%;
-        opacity: 1;
-    }
-    100% {
-        background-size: 100%;
-        opacity: 0.8;
-    }
-}
-
-/* Animación de entrada del texto */
-@keyframes fadeIn {
-    0% {
-        opacity: 0;
-        transform: translateY(-20px);
-    }
-    100% {
-        opacity: 1;
-        transform: translateY(0);
-    }
-}
+/* Página principal */
 
 .titulo {
+    // Estilos para la sección de título de la página principal, con sombra en el texto y fondo de color secundario.
     color: $color-letras;
     background-color: $color-secundario;
     width: 100%;
     text-align: center;
     padding: 20px;
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.6);
-
 }
 
 .titulo iframe {
+    // Estilos para el iframe dentro de la sección titulo, ajusta el tamaño y añade una animación de escala al pasar el mouse
     width: 100%;
     padding: 20px;
-    transition: transform 0.5s ease; 
+    transition: transform 0.5s ease;
 }
 
 .titulo iframe:hover {
-    transform: scale(1.02); 
+    transform: scale(1.02);
 }
 
-
 .info {
+    // Estilos para la sección de información, uso de flexbox y espaciado entre las imágenes y el contenido
     display: flex;
 
     img {
@@ -138,6 +118,7 @@ a:hover {
 }
 
 .info p {
+    // Estilos para el parrafo dentro de la sección de informacion, utiliza color y fondo definidos por variables
     color: $color-letras;
     background-color: $color-terciario;
     width: 100%;
@@ -146,8 +127,8 @@ a:hover {
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.6);
 }
 
-/* Estilos para la sección Pasión */
 .pasion h2 {
+    // Estilos para el encabezado de la sección pasion, animación suave 
     color: $color-letras;
     text-align: center;
     background-color: $color-secundario;
@@ -165,20 +146,23 @@ a:hover {
 }
 
 .pasion {
+    // Estructura de la sección pasion, elementos alineados a la derecha y ajustados
     display: flex;
     justify-content: flex-end;
 }
 
 .pasion img {
+    // Estilos para la imagen dentro de la seccion pasion, añade una transición al pasar el mouse
     height: 337px;
     transition: transform 0.5s ease;
 }
 
 .pasion img:hover {
-    transform: scale(1.05); 
+    transform: scale(1.05);
 }
 
 .pasion p {
+    // Estilos para el parrafo en la sección pasion, texto centrado, con fondo y color definidos por variables
     color: $color-letras;
     width: 50%;
     font-size: nth($fuente, 1);
@@ -188,7 +172,11 @@ a:hover {
     height: 337px;
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.6);
 }
+
+/* Estilos para tablas */
+
 .table {
+    // Estilos para las tablas, ocupa todo el ancho disponible
     width: 100%;
 }
 
@@ -209,7 +197,10 @@ a:hover {
     color: #3f2723;
 }
 
+/* Estilos para otras secciones */
+
 .escudo {
+    // Estilo centrado para el escudo, con tamaño fijo
     display: block;
     margin-left: auto;
     margin-right: auto;
@@ -218,11 +209,13 @@ a:hover {
 }
 
 .boton {
+    // Estilos para el boton, usando flexbox para centrar
     @include flex(flex, center, center);
-    body { scroll-behavior: smooth;}
+    body { scroll-behavior: smooth; }
 }
 
 .boton a {
+    // Estilos para enlaces con apariencia de boton, colores y tamaños definidos por variables
     color: $color-letras;
     background-color: map-get($boton, bg-color);
     font-size: nth($fuente, 2);
@@ -238,14 +231,15 @@ a:hover {
     color: white;
 }
 
-
 /* Página de productos */
 
 .card-body {
+    // Estilos para el cuerpo de las tarjetas de productos, añade margen y organiza el contenido
     margin: 20px;
 }
 
 ul.pagination {
+    // Estilos para la paginacion, usa flexbox para centrar los elementos
     display: flex;
     justify-content: center;
     list-style-type: none;
@@ -259,6 +253,7 @@ ul.pagination .page-item {
 }
 
 ul.pagination .page-link {
+    // Estilos para los enlaces de paginacion, fondo blanco y bordes redondos
     display: block;
     padding: 10px 15px;
     text-decoration: none;
@@ -272,8 +267,10 @@ ul.pagination .page-link:hover {
     background-color: #dde1e6;
 }
 
-/* cards */
+/* Estilos para tarjetas */
+
 .container-cards {
+    // Estilos para el contenedor de tarjetas, utiliza flexbox para distribuir las tarjetas
     display: flex;
     flex-wrap: wrap;
     gap: 10px;
@@ -282,18 +279,22 @@ ul.pagination .page-link:hover {
 }
 
 .card {
+    // Estilos para las tarjetas de productos, borde redondo y sombra con una animación de escala al pasar el ratón
     width: 19rem;
     margin: 10px;
-    border: 1px solid #ddd; 
-    border-radius: 8px; 
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); 
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
+
 .card:hover {
-    transform: scale(1.02); 
+    transform: scale(1.02);
     box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
-    }
+}
+
 .card-title {
+    // Estilos para el título dentro de la tarjeta, texto centrado con padding inferior
     text-align: center;
     padding-bottom: 20px;
     color: $color-secundario;
@@ -301,10 +302,12 @@ ul.pagination .page-link:hover {
 }
 
 .card-text {
+    // Estilos para el texto de la tarjeta, centrado
     text-align: center;
 }
 
 .btn-primary {
+    // Estilos para los botones primarios en las tarjetass, usa variables para color de fondo y bordes redondos,
     background-color: map-get($boton, bg-color);
     border-radius: map-get($boton, border-radius);
     text-decoration: none;
@@ -314,9 +317,10 @@ ul.pagination .page-link:hover {
     justify-content: center;
 }
 
-/* pagina nosotros */
+/* Página nosotros */
 
 .hist {
+    // Estilos para la sección de historia, margen y padding con fondo y bordes redondos
     color: #333;
     margin: 20px auto;
     padding: 20px;
@@ -331,6 +335,7 @@ ul.pagination .page-link:hover {
 }
 
 .hist img {
+    // Estilos para las imágenes dentro de la sección historia, centradas y con borde redondo
     display: block;
     margin: 20px auto;
     max-width: 100%;
@@ -339,6 +344,7 @@ ul.pagination .page-link:hover {
 }
 
 .hist h2 {
+    // Estilos para el encabezado en la sección de historia, margen superior y fuente grande
     color: #413e3e;
     margin-top: 20px;
     font-size: nth($fuente, 2);
@@ -346,24 +352,27 @@ ul.pagination .page-link:hover {
 }
 
 .hist p {
+    // Estilos para el párrafo en la sección de historia, margen superior y color de texto definido por variables
     margin-top: 10px;
     font-size: nth($fuente, 1);
     color: $color-letras;
 }
 
 .hist:hover {
+    // Efecto hover para la sección de historia, cambia el fondo y añade una sombra mayor
     background-color: $color-secundario;
     box-shadow: 0 6px 12px rgba(255, 255, 255, 0.2);
 }
 
-/* noticias */
+/* Noticias */
 
 .carousel-slide {
+    // Estilos para el carrusel, ocupa el 50% del ancho
     width: 50%;
 }
 
-
 .mb-3 {
+    // Estilos para una caja de contenido: margen inferior, fondo oscuro y borde redondeado
     margin-bottom: 20px;
     width: 100%;
     max-width: 600px;

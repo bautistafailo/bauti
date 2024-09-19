@@ -1,51 +1,56 @@
-header{
+header {
+    // Estilos generales para el header: se mantiene fijo en la parte superior, usa flexbox para distribuir el contenido 
     background-color: $color-principal;
     position: sticky;
     top: 0;
     @include flex(flex, space-between, center);
     z-index: 1000;
+}
+
+h1 {
+    // Estilos para el título principal (h1)
+    color: $color-letras;
+    font-size: nth($fuente, 4);
+    font-weight: 900;
+    text-align: center;
+    padding: 10px;
+    span {
+        color: rgb(129, 82, 52);
+    }
+}
+
+header {
+    // Configura la estructura del header: con flexbox para alinear elementos
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    img {
+        // Estilos para la imagen (logo): se ajusta proporcionalmente con una altura máxima
+        height: 100%;
+        max-height: 100px;
+        width: auto;
     }
 
-    h1{
-        color: $color-letras;
-        font-size: nth($fuente, 4 );
-        font-weight: 900;
-        text-align: center;
-        padding: 10px;
-        span{
-            color: rgb(129, 82, 52);
-        }
-        
-    }
+    nav {
+        // Estilos para la navegación: lista horizontal con enlaces estilizados
+        ul {
+            list-style: none;
+            display: flex;
 
-    header {
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
-        
-        img {
-            height: 100%; // Para que la imagen tome toda la altura del header/nav
-            max-height: 100px; // Puedes ajustar esta altura según necesites
-            width: auto; // Mantiene las proporciones de la imagen
-        }
-    
-        nav {
-            ul {
-                list-style: none;
-                display: flex;
-                
-                li {
-                    margin: 20px;
-                    font-size: nth($fuente, 1);
-                    transition: background-color 0.9s ease;
-    
-                    a {
-                        @extend %enlaces;
-                        color: $color-letras;
-                        transition: color 0.5s ease, background-color 0.5s ease;
-                    }
+            li {
+                // Espaciado entre los elementos del menú y transición suave para el fondo
+                margin: 20px;
+                font-size: nth($fuente, 1);
+                transition: background-color 0.9s ease;
+
+                a {
+                    // Estilos de los enlaces del menú: color y transición suave
+                    @extend %enlaces;
+                    color: $color-letras;
+                    transition: color 0.5s ease, background-color 0.5s ease;
                 }
             }
         }
     }
-    
+}
