@@ -28,7 +28,6 @@ a:hover {
   height: 625px;
   text-align: center;
   background-image: url(../img/equipofestejo.jpeg);
-  /* Asegúrate de que la ruta es correcta */
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
@@ -451,20 +450,49 @@ footer a img {
     flex-direction: column;
     margin: 10px; } }
 
-/* media query para pantallas con un ancho máximo  */
 @media screen and (max-width: 1711px) {
   .container-cards {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
-    gap: 10px;
-    margin-left: 350px; } }
+    gap: 20px;
+    justify-content: center;
+    padding: 0 40px;
+    margin: 0 auto;
+    width: 100%;
+    box-sizing: border-box; }
+  .card {
+    max-width: 500px;
+    width: 100%;
+    margin: 0 auto; } }
 
-/* media query para pantallas con un ancho máximo */
 @media screen and (max-width: 750px) {
   .container-cards {
     display: flex;
     flex-direction: column;
-    align-items: center; } }
+    align-items: center;
+    gap: 20px;
+    padding: 0 15px;
+    margin: 0 auto;
+    width: 100%; }
+  .card {
+    width: 90%;
+    max-width: 400px;
+    margin: 0 auto; }
+  .card img {
+    width: 100%;
+    height: auto; } }
+
+@media screen and (max-width: 450px) {
+  .container-cards {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+    margin: 0;
+    width: 100%; }
+  .card {
+    width: 70%;
+    margin: 0 auto; } }
 
 @media (max-width: 850px) {
   .hist {
@@ -483,11 +511,9 @@ footer a img {
     width: 60%;
     /* Ajusta el ancho de la imagen */ }
   h2 {
-    font-size: 40px;
-    /* Tamaño del h2 ajustado */ }
+    font-size: 40px; }
   p {
     font-size: 20px;
-    /* Texto ligeramente más pequeño */
     line-height: 1.5; } }
 
 @media screen and (max-width: 800px) {
@@ -495,8 +521,7 @@ footer a img {
     flex-direction: column;
     align-items: center; }
   .info img {
-    width: 80%;
-    /* Reduce el tamaño de la imagen */ }
+    width: 80%; }
   h2 {
     font-size: 40px; }
   p {
